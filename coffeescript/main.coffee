@@ -15,6 +15,7 @@ $(document).ready ->
     try
         context = new webkitAudioContext
         oscillator = new Oscillator(context)
+        waveselector = new WaveSelector("wave", oscillator)
     
     catch error
         warningtext = '<button type="button" class="close" data-dismiss="alert">&times;</button>Busphony only works with browsers that support the Web Audio Api 
@@ -148,14 +149,29 @@ $(document).ready ->
             $(ev.currentTarget).find("i").attr("class","icon-pause")
             bus.start()
 
+    # tooltips for the buttons
     tooltipOptions = 
-        placement: "right"
+        placement: "top"
         title: "Press play to make the bussynth buzz!"
-    $('#play').tooltip(tooltipOptions)
+    $('#play').tooltip(tooltipOptions)    
+        
+    tooltipOptions.title = "Change the oscillator waveform"
+    $('#wave').tooltip(tooltipOptions)
+
+    tooltipOptions.title = "What is this?"
+    $('#info').tooltip(tooltipOptions)
 
     tooltipOptions.title = "Add or remove individual bus routes" 
-    tooltipOptions.placement = "top" 
     $('#busroutes').tooltip(tooltipOptions)
+
+    tooltipOptions.placement = "bottom" 
+    tooltipOptions.title = "They run the busses" 
+    $('#straeto').tooltip(tooltipOptions)
+    
+    tooltipOptions.title = "They provide positioning" 
+    $('#api').tooltip(tooltipOptions)
+
+
 
     
 

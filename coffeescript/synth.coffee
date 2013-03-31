@@ -1,5 +1,5 @@
 class Oscillator
-    constructor: (context, switchel) ->
+    constructor: (context) ->
         @oscillator = context.createOscillator()
         @oscillator.type = @oscillator.SINE
         @master_gain = context.createGainNode()
@@ -18,6 +18,7 @@ class Oscillator
             when "sine" then @oscillator.type = @oscillator.SINE
             when "square" then @oscillator.type = @oscillator.SQUARE
             when "sawtooth" then @oscillator.type = @oscillator.SAWTOOTH
+            when "triangle" then @oscillator.type = @oscillator.TRIANGLE
 
     setFrequency: (value) ->
         # see https://en.wikipedia.org/wiki/Piano_key_frequencies
@@ -33,24 +34,12 @@ class Oscillator
             @started = true
         @master_gain.gain.value = 1
 
-class Switch
-    constructor: (el, @oscillator) ->
-        $('#'+el).toggle ->
-            $(@).find("i").attr("class","icon-volume-off")
-            for pad in pads
-                pad.off()
-        , ->
-            $(@).find("i").attr("class","icon-volume-up")
-            for pad in pads
-                pad.on()
-
-
 class WaveSelector
     constructor: (el, @oscillator) ->
-        @states = ["sine", "square", "sawtooth"]
+        @states = ["sine", "square", "sawtooth", "triangle"]
         @currentState = 0
 
         $('#'+el).click =>
             @currentState += 1
-            for pad in pads
-                oscillator.setAudioWaveform(@states[@currentState%3])
+            $('#'+el).text(@states[@currentState%4])
+            oscillator.setAudioWaveform(@states[@currentState%4])

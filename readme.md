@@ -15,7 +15,7 @@ The synthesizer uses the [web audio api](http://www.w3.org/TR/webaudio/) the map
 
 Compile the coffeescript into a javascript file: 
 
-    coffee -cj busphony.js synth.coffee mapoffee bus.coffee main.coffee
+    coffee -cj busphony.js synth.coffee map.coffee bus.coffee main.coffee
 
 Stick the html and javascript on a webserver and open in a browser.
 

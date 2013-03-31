@@ -122,18 +122,5 @@ class Bus
             marker.setMap(null)
         @markers = []
 
-    activatePadsWithMarkers = () ->
-        activepads = []
-        deactivedpads = []
-        for marker in @markers
-            for pad in @pads
-                if pad.contains(marker.getPosition())
-                    activepads.push(pad)
-                else
-                    deactivedpads.push(pad)
-        for pad in activatedpads
-            pad.on()
-        for pad in deactivedpads
-            pad.off()
 
 
