@@ -7,6 +7,7 @@ getUrlParameters = ()->
     return params
 
 
+
 $(document).ready ->
     params = getUrlParameters()
 
@@ -76,8 +77,6 @@ $(document).ready ->
             pad.off()
             pad.oscillator.off()
 
-
-
     rectOptions = 
         strokeColor: "#ffffff"
         strokeOpacity: 0.1
@@ -113,8 +112,6 @@ $(document).ready ->
             activey.push(Number(y))
     else
         activey = [1..yaxis]
-    console.log activex
-    console.log activey
 
     for y in [1..yaxis]
         sw = new google.maps.LatLng(southwest.lat()+((y-1)*latdelta), southwest.lng() - lngdelta)
@@ -152,11 +149,12 @@ $(document).ready ->
             bus.start()
 
     tooltipOptions = 
-        placement: "top"
+        placement: "right"
         title: "Press play to make the bussynth buzz!"
     $('#play').tooltip(tooltipOptions)
 
     tooltipOptions.title = "Add or remove individual bus routes" 
+    tooltipOptions.placement = "top" 
     $('#busroutes').tooltip(tooltipOptions)
 
     

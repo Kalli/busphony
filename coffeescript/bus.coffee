@@ -3,11 +3,9 @@ class Bus
         @active = false
 
     getBusPositions: () ->
-        d = new Date()
         $.ajax 
             dataType: "json"
-            # url: "http://apis.is/bus/realtime"
-            url: if d.getSeconds()%2==0 then "/dummybusdata.json" else "/dummybusdata2.json"
+            url: "http://apis.is/bus/realtime"
             data: []
             success: (data) =>
                 @drawBusses(data)
@@ -69,8 +67,7 @@ class Bus
     getBusRoutes: () ->
         $.ajax 
             dataType: "json"
-            url: "/dummybusdata.json"
-            # url: "/dummybusdataempty.json"
+            url: "http://apis.is/bus/realtime"
             data: []
             success: (data) =>
                 busnumbers = []
