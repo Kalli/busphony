@@ -1,0 +1,144 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>Strætófónía / Busphony</title>
+    
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script src="/bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript" src="/js/busphony.js"></script>
+
+    
+    
+        <link rel="stylesheet" href="/bootstrap/css/bootstrap.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="/css/busphony.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="/css/style.css" type="text/css" media="screen" />
+
+    
+    
+        <meta property="og:type" content="website"/>
+<meta property="og:title" content="Busphony - KarlTryggvason.com"/>
+<meta property="og:description" content="A synthesizer powered by the busses of Reykjavik"/>
+<meta property="og:image" content="http://www.karltryggvason.com/img/thumbs/busphonythumb.png"/>
+
+    
+    <meta name="description" content="A synthesizer powered by the busses of Reykjavik">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-526010-4']);
+        _gaq.push(['_setDomainName', 'karltryggvason.com']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      </script>
+</head>
+<body>
+    
+    <div id='map'>
+
+</div><div id='loading'>
+    Loading...
+</div><div class='panel' id='sidebar'>
+    <div id='player'>
+        <div class='center' id='controls'>
+            <a class='btn btn-success' href='#' id='play'>
+                <i class='icon-play'>&nbsp;</i>
+            </a> 
+            <a class='btn text-center' data-toggle='modal' href='#info' role='button'>
+                <i class='icon-info-sign'>&nbsp;</i>
+            </a> 
+        </div>
+        <div id='businfo'>
+             &nbsp;
+        </div>
+        <div id='busroutes'>
+            &nbsp;
+        </div>
+
+        <div class='footer'>
+            <span class='pull-left'>
+                <small>Made by <a href='http://www.karltryggvason.com'>Karl Tryggvason</a></small>
+            </span>
+            <span class='sm pull-right'>
+                <ul>
+                    <li id='em'><a alt='Email me' href='mailto:ktryggvason@gmail.com'>Email</a></li>
+                    <li id='tw'><a alt='Twitter' href='http://www.twitter.com/karltryggvason'>Twitter</a></li>
+                    <li id='gh'><a alt='Github' href='http://www.github.com/kalli'>Github</a></li>
+                </ul>
+            </span>
+        </div>
+    </div>
+</div><div class='panel' id='title'>
+    <h2>Busphony</h2>
+    <h4>A synthesizer powered by the busses of Reykjavik</h4>
+</div><div class='modal hide fade' id='info'>
+    <div class='modal-header'>
+        <button aria-hidden='true' class='close' data-dismiss='modal' type='button'>&times;</button>
+        <h3>Busphony</h3>
+    </div>
+    <div class='modal-body'>
+        <p>
+            <strong>
+                What is this?
+            </strong>
+        </p>  
+
+        <p>
+            Busphony is a bus powered syntheziser with a map interface, 81 pads are overlaid on a map of the city of Reykjavik. Each pad triggers a synthesizer note (you can try it out by hovering above the pads). 
+        </p>
+        <p>
+            Every 15 seconds Busphony fetches the current position of the buses in busroutes selected by the user, the location of each bus is then shown on the map and the corresponding synth pad/note is triggered.
+        </p>
+        <p>
+            Press play and if any busses are currently running you should hear the results shortly. The result is a pretty horrid sounding cacophony, but it is, in my opinion anyway, mildly amusing. 
+        </p>
+        
+        <p>
+            <strong>
+                How does it work?
+            </strong>
+        </p>       
+        <p>
+            The synthesizer uses the <a href='http://www.w3.org/TR/webaudio/'>web audio api</a>, the map is powered by the <a href='https://developers.google.com/maps/'>Google Maps api</a>, bus positioning is fetched from <a href='http://docs.apis.is/'>Apis.is</a> and the whole thing is tied together with <a href='http://www.github.com/kalli'>some coffeescript/javascript code</a> by yours truly.
+        </p>
+         
+        <p>
+            <strong>
+                This is silly
+            </strong>
+        </p>
+        <p>
+            Yes it is.
+        </p>
+                 
+        <p>
+            <strong>
+                And useless...
+            </strong>
+        </p>
+
+        <p>
+            Well, kind of, but it was originally conceived as a way to notify me when the bus was headed my way. <a href='/busphony/?routes=4&amp;x=5&amp;y=5'>Here is a link to a busphony</a> that plays a note when the number four is getting close to my place, I use this to know when to head out the door and catch the bus.
+        </p>
+    </div>
+    <div class='modal-footer sm pull-right'>
+        <ul>
+            <li>Made by Karl Tryggvason</li>
+            <li id='em'><a alt='Email me' href='mailto:ktryggvason@gmail.com'>Email</a></li>
+            <li id='tw'><a alt='Twitter' href='http://www.twitter.com/karltryggvason'>Twitter</a></li>
+            <li id='gh'><a alt='Github' href='http://www.github.com/kalli'>Github</a></li>
+        </ul>
+    </div> 
+</div>
+
+</body>
+</html>
