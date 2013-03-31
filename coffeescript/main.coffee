@@ -159,7 +159,7 @@ $(document).ready ->
     $('#wave').tooltip(tooltipOptions)
 
     tooltipOptions.title = "What is this?"
-    $('#info').tooltip(tooltipOptions)
+    $('#infobtn').tooltip(tooltipOptions)
 
     tooltipOptions.title = "Add or remove individual bus routes" 
     $('#busroutes').tooltip(tooltipOptions)
