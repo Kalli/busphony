@@ -46,11 +46,15 @@
     <div id='map'>
 
 </div><div id='loading'>
-    Loading...
+    <div class='alert alert-warning' id='modeselektor'>
+        <h3>Which version of Busphony do you want?</h3>
+        <button class='btn' id='useful'>The useful version</button>
+        <button class='btn' id='useless'>The useless but amusing version</button>
+    </div>
 </div><div class='panel' id='sidebar'>
     <div id='player'>
-        <div class='center btn-group' id='controls'>
-            <a class='btn text-center' data-toggle='modal' href='#info' id='infobtn' role='button'>
+        <div class='controls center btn-group' id='controls'>
+            <a class='btn text-center' data-toggle='modal' href='#infooverlay' id='info' role='button'>
                 <i class='icon-info-sign'>&nbsp;</i>
             </a> 
              <a class='btn' href='#' id='wave'>
@@ -60,7 +64,7 @@
                 <i class='icon-play'>&nbsp;</i>
             </a>
             </div>
-        <div class='center btn-group' id='controls'>
+        <div class='controls center btn-group' id='controls'>
             <a class='btn' href='http://www.apis.is' id='api'>Apis.is</a> 
             <a class='btn' href='http://www.straeto.is' id='straeto'>Straeto.is</a>
         </div>
@@ -73,6 +77,7 @@
             
 
         <div class='footer'>
+
             <span class='pull-left'>
                 <small>Made by <a href='http://www.karltryggvason.com'>Karl Tryggvason</a></small>
             </span>
@@ -88,7 +93,7 @@
 </div><div class='panel' id='title'>
     <h2>Strætófónía / Busphony</h2>
     <h4>A synthesizer powered by the busses of Reykjavik</h4>
-</div><div class='modal hide fade' id='info'>
+</div><div class='modal hide fade' id='infooverlay'>
     <div class='modal-header'>
         <button aria-hidden='true' class='close' data-dismiss='modal' type='button'>&times;</button>
         <h3>Busphony</h3>
@@ -138,7 +143,31 @@
             Well, kind of, but it was originally conceived as a way to notify me when the bus was headed my way. <a href='/busphony/?routes=4&amp;x=5&amp;y=5'>Here is a link to a busphony</a> that plays a note when the number four is getting close to my place, I use this to know when to head out the door and catch the bus.
         </p>
     </div>
-    <div class='modal-footer sm'>
+    <div class='sm modal-footer'>
+        <ul class='pull-right'>
+            <li>Made by Karl Tryggvason</li>
+            <li id='em'><a alt='Email me' href='mailto:ktryggvason@gmail.com'>Email</a></li>
+            <li id='tw'><a alt='Twitter' href='http://www.twitter.com/karltryggvason'>Twitter</a></li>
+            <li id='gh'><a alt='Github' href='http://www.github.com/kalli'>Github</a></li>
+        </ul>
+    </div> 
+</div><div class='modal hide fade' id='directionsoverlay'>
+    <div class='modal-header'>
+        <button aria-hidden='true' class='close' data-dismiss='modal' type='button'>&times;</button>
+        <h3>Directions</h3>
+    </div>
+    <div class='modal-body'>
+        <ol>
+            <li>Select the busroutes you want to follow using the buttons on the left</li>
+            <li>Drag and resize the shadowed area to the portion of the map you want to cover</li>
+            <li>Press play and Busphony will alert you when your bus has entered the area you selected</li>
+            <li>Go catch that bus!</li>
+        </ol>
+        <div class='alert alert-error text-center'>
+            Busphony is in no way affiliated with or endorsed by Strætó. We accept no responsibility for you missing the bus.
+        </div>
+    </div>
+    <div class='sm modal-footer'>
         <ul class='pull-right'>
             <li>Made by Karl Tryggvason</li>
             <li id='em'><a alt='Email me' href='mailto:ktryggvason@gmail.com'>Email</a></li>
