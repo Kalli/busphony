@@ -218,7 +218,7 @@ addSaveButton = (pad,bus) ->
         ne = pad.rectangle.getBounds().getNorthEast().toString().replace("(","").replace(")","").replace(" ","")
         sw = pad.rectangle.getBounds().getSouthWest().toString().replace("(","").replace(")","").replace(" ","")
         routes = bus.busnumbers.toString()
-        longurl = "http://www.karltryggvason.com/busphony+?v=true&ne="+ne+"&sw="+sw+"&routes="+routes
+        longurl = "http://www.karltryggvason.com/busphony?v=true&ne="+ne+"&sw="+sw+"&routes="+routes
         shortenUrl(longurl)
 
 
