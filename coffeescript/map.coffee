@@ -169,7 +169,8 @@ createMap = (useful) ->
     $(".controls").show()
     if useful
         addSaveButton(pads[0], bus)
-        $('#directionsoverlay').modal()
+        if !params.sw? and params.ne?
+            $('#directionsoverlay').modal()
 
 
 

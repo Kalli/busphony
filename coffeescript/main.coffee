@@ -10,6 +10,7 @@ $(document).ready ->
     $(".controls").hide()
     params = getUrlParameters()
     if params.v?
+        $('#loading').html("<h3>Loading...</h3>").css("z-index","0")
         createMap(true)
 
     if params.x? and params.y? and params.routes?
