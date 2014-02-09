@@ -1,4 +1,3 @@
-
 ## Busphony
 
 A synthesizer powered by the busses of Reykjavik.
@@ -20,5 +19,7 @@ Compile the coffeescript into a javascript file:
 Stick the html and javascript on a webserver and open in a browser.
 
 ## Demo
+
+*Due to changes in the terms and conditions for bus.is api access Busphony no longer has access to position data for the busses, leaving the demo defunct*
 
 Demo at http://www.karltryggvason.com/busphony
