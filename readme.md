@@ -20,4 +20,4 @@ Stick the html and javascript on a webserver and open in a browser.
 
 ## Demo
 
-Demo at http://www.karltryggvason.com/busphony
+Due to changes in the [Bus.is](https://bus.is) and Google Maps apis a demo is unfortunately no longer available.
